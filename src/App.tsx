@@ -72,8 +72,16 @@ function App() {
         >
             {
                 <BackgroundImage h={"99%"} src={backgrounds[backgroundIndex]}>
-                    <div style={{ backgroundColor: "rgba(0, 0, 0, 0.7)", height: "100%" }}>
-                        <Container h={"100%"}>
+                    <div
+                        style={{
+                            backgroundColor: "rgba(0, 0, 0, 0.7)",
+                            height: "100%",
+                            display: "flex",
+                            flexDirection: "column",
+                            overflow: "hidden",
+                        }}
+                    >
+                        <Container h={"100%"} style={{ overflow: "auto", flex: 1 }}>
                             <Generator
                                 character={character}
                                 setCharacter={setCharacter}
