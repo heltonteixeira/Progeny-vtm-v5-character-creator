@@ -46,7 +46,7 @@ const TouchstonePicker = ({ character, setCharacter, nextStep }: TouchstonePicke
             <Space h={"sm"} />
 
             <Stack align="center" spacing={globals.isPhoneScreen ? "xs" : "xl"}>
-                <ScrollArea h={globals.viewportHeightPx - 420} w={globals.isSmallScreen ? "100%" : "110%"}>
+                <ScrollArea style={{ maxHeight: "calc(100vh - 500px)" }} w={globals.isSmallScreen ? "100%" : "110%"}>
                     {touchstones.map((touchstone, i) => {
                         return (
                             <Stack key={i} mt={"20px"}>

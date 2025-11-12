@@ -125,10 +125,9 @@ const MeritsAndFlawsPicker = ({ character, setCharacter, nextStep }: MeritsAndFl
         )
     }
 
-    const height = globals.viewportHeightPx
     const isConfirmDisabled = isThinBlood && remainingThinbloodMeritPoints < 0
     return (
-        <Stack align="center" mt={100}>
+        <Stack align="center" style={{ width: "100%", maxWidth: "100%" }}>
             <Text fz={globals.largeFontSize} ta={"center"}>
                 Remaining Advantage points: {remainingMerits} <br /> Remaining Flaw points: {remainingFlaws}
             </Text>
@@ -145,7 +144,7 @@ const MeritsAndFlawsPicker = ({ character, setCharacter, nextStep }: MeritsAndFl
 
                 {/* Merits & Flaws */}
                 <Tabs.Panel value="merits" pt="xs">
-                    <ScrollArea h={height - 330} w={"100%"} p={20}>
+                    <ScrollArea style={{ maxHeight: "calc(100vh - 400px)" }} w={"100%"} p={20}>
                         {isThinBlood ? (
                             <>
                                 <Text fz={globals.largeFontSize} ta={"center"} c={theme.colors.grape[6]}>

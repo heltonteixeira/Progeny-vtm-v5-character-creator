@@ -144,7 +144,7 @@ const Generator = ({ character, setCharacter, selectedStep, setSelectedStep }: G
     }
 
     return (
-        <Center h={"100%"}>
+        <Center style={{ height: "100%", overflow: "auto" }}>
             <ErrorBoundary key={selectedStep}>{getStepComponent()}</ErrorBoundary>
         </Center>
     )

@@ -265,11 +265,9 @@ const SkillsPicker = ({ character, setCharacter, nextStep }: SkillsPickerProps) 
             </Grid>
         </Group>
     )
-    const height = globals.viewportHeightPx
-    const heightBreakPoint = 930
 
     return (
-        <div style={{ marginTop: height < heightBreakPoint ? "40px" : 0 }}>
+        <div style={{ maxWidth: "100%", width: "100%" }}>
             {!pickedDistribution ? (
                 <Text fz={globals.largeFontSize} ta={"center"}>
                     Pick your <b>Skill Distribution</b>
@@ -340,7 +338,7 @@ const SkillsPicker = ({ character, setCharacter, nextStep }: SkillsPickerProps) 
 
             <Space h="sm" />
 
-            {height < heightBreakPoint ? <ScrollArea h={height - 340}>{createSkillButtons()}</ScrollArea> : createSkillButtons()}
+            <ScrollArea style={{ maxHeight: "calc(100vh - 450px)" }}>{createSkillButtons()}</ScrollArea>
 
             <SpecialtyModal
                 modalOpened={modalOpened}

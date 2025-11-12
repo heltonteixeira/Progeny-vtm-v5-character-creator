@@ -51,9 +51,8 @@ export const Loresheets = ({ character, getMeritOrFlawLine, pickedMeritsAndFlaws
     }
 
     const smallScreen = globals.isSmallScreen
-    const height = globals.viewportHeightPx
     return (
-        <ScrollArea h={height - 330} w={"100%"} p={20}>
+        <ScrollArea style={{ maxHeight: "calc(100vh - 400px)" }} w={"100%"} p={20}>
             <Grid w={"100%"}>
                 {openLoresheet ? (
                     <OpenedLoresheet

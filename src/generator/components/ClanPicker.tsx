@@ -93,9 +93,8 @@ const ClanPicker = ({ character, setCharacter, nextStep }: ClanPickerProps) => {
         )
     }
 
-    const height = globals.viewportHeightPx
     return (
-        <div style={{ height: height - 250 }}>
+        <div style={{ maxWidth: "100%", width: "100%" }}>
             <Text fz={"30px"} ta={"center"}>
                 Pick your <b>Clan</b>
             </Text>
@@ -105,7 +104,7 @@ const ClanPicker = ({ character, setCharacter, nextStep }: ClanPickerProps) => {
             </Text>
             <hr color="#e03131" />
 
-            <ScrollArea h={height - 215} w={"100%"} p={20}>
+            <ScrollArea style={{ maxHeight: "calc(100vh - 350px)" }} w={"100%"} p={20}>
                 <Text ta="center" fz="xl" fw={700} mb={"sm"} mt={"md"} c={theme.colors.blue[6]}>
                     Rulers & Commanders
                 </Text>

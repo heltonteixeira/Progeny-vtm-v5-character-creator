@@ -254,12 +254,11 @@ const DisciplinesPicker = ({ character, setCharacter, nextStep }: DisciplinesPic
 
     const powersSortedByDiscipline = pickedPowers.sort()
     let disciplineTitle = ""
-    const height = globals.viewportHeightPx
 
     const isThinBlood = character.clan === "Thin-blood"
     if (isThinBlood) {
         return (
-            <div style={{ width: smallScreen ? "393px" : "810px", marginTop: globals.isPhoneScreen ? "60px" : "80px" }}>
+            <div style={{ maxWidth: smallScreen ? "393px" : "810px", width: "100%" }}>
                 <Text fw={500} fz={smallScreen ? "14px" : "28px"} ta="center">
                     <b>Thin-bloods</b> do not pick disciplines
                     <br /> you gain them from blood resonance
@@ -285,7 +284,7 @@ const DisciplinesPicker = ({ character, setCharacter, nextStep }: DisciplinesPic
     }
 
     return (
-        <div style={{ width: smallScreen ? "393px" : "810px", marginTop: globals.isPhoneScreen ? "60px" : "80px" }}>
+        <div style={{ maxWidth: smallScreen ? "393px" : "810px", width: "100%" }}>
             <Text fw={700} fz={smallScreen ? "14px" : "28px"} ta="center">
                 Pick 2 powers in one discipline,
                 <br /> 1 power in another,
@@ -306,7 +305,7 @@ const DisciplinesPicker = ({ character, setCharacter, nextStep }: DisciplinesPic
                     {/* Discipline-List */}
 
                     <Grid.Col span={smallScreen ? 12 : 9} offset={smallScreen ? 0 : 1}>
-                        <ScrollArea h={smallScreen ? height - 320 : height - 400} pb={20} w={"105%"}>
+                        <ScrollArea style={{ maxHeight: "calc(100vh - 450px)" }} pb={20} w={"105%"}>
                             <Center>
                                 <Accordion w={smallScreen ? "100%" : "600px"}>
                                     {Object.entries(disciplinesForClan).map(([name, discipline]) =>

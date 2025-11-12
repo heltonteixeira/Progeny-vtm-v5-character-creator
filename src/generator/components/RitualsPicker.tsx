@@ -73,9 +73,8 @@ const RitualsPicker = ({ character, setCharacter, nextStep }: RitualsPickerProps
         })
     }
 
-    const height = globals.viewportHeightPx
     return (
-        <div style={{ width: smallScreen ? "393px" : "810px", marginTop: phoneScreen ? "60px" : "80px" }}>
+        <div style={{ maxWidth: smallScreen ? "393px" : "810px", width: "100%" }}>
             <Text fw={700} fz={smallScreen ? "14px" : "28px"} ta="center">
                 ⛤ Pick 1 free Ritual ⛤
             </Text>
@@ -87,7 +86,7 @@ const RitualsPicker = ({ character, setCharacter, nextStep }: RitualsPickerProps
             <Space h={"sm"} />
 
             <Stack align="center" spacing="xl" w={"100%"}>
-                <ScrollArea h={smallScreen ? height - 320 : height - 400} pb={20} w={"105%"}>
+                <ScrollArea style={{ maxHeight: "calc(100vh - 450px)" }} pb={20} w={"105%"}>
                     <Center>
                         <Stack>
                             <Grid w={"100%"}>{getRitualCardCols()}</Grid>

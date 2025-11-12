@@ -119,10 +119,8 @@ const PredatorTypePicker = ({ character, setCharacter, nextStep }: PredatorTypeP
         </Stack>
     )
 
-    const height = globals.viewportHeightPx
-    const heightBreakPoint = 1250
     return (
-        <div style={{ width: "100%", marginTop: height < heightBreakPoint ? "50px" : "55px" }}>
+        <div style={{ width: "100%", maxWidth: "100%" }}>
             <Text fz={globals.largeFontSize} ta={"center"}>
                 {isThinBlood ? (
                     <div>
@@ -158,7 +156,7 @@ const PredatorTypePicker = ({ character, setCharacter, nextStep }: PredatorTypeP
             <hr color="#e03131" />
             <Space h={"sm"} />
 
-            {height < heightBreakPoint ? <ScrollArea h={height - 230}>{createPredatorTypeStack()}</ScrollArea> : createPredatorTypeStack()}
+            <ScrollArea style={{ maxHeight: "calc(100vh - 350px)" }}>{createPredatorTypeStack()}</ScrollArea>
 
             {pickedPredatorType != "" ? (
                 <PredatorTypeModal
